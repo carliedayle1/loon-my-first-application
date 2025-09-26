@@ -28,10 +28,14 @@
                     </div>
 
                     <div class="mt-3 sm:mt-0">
-                        <p class="text-lg font-bold text-green-600">${{ $job->salary }} / Year</p>
+                        <p class="text-lg font-bold text-green-600">{{ $job->salary }} / Year</p>
                     </div>
                 </div>
             </a>
         @endforeach
+    </div>
+
+    <div class="mt-6">
+        {{ $jobs->links() }}
     </div>
 </x-layout>
