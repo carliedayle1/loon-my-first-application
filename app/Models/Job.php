@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employer extends Model
+class Job extends Model
 {
     use HasFactory;
 
-    public function jobs()
+    protected $table = 'job_listings';
+
+    public function employer()
     {
-        return $this->hasMany(Job::class);
+        return $this->belongsTo(Employer::class);
     }
 }
