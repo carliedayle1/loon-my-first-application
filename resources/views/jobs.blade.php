@@ -19,7 +19,12 @@
                 <div class="mt-4 sm:flex sm:items-center sm:justify-between">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">{{ $job->title }}</h3>
-                        {{-- <p class="mt-1 text-sm text-gray-500">📍 {{ $job['location'] }}</p> --}}
+                        
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            @foreach ($job->tags as $tag)
+                                <span class="rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-800">{{ $tag->name }}</span>
+                            @endforeach
+                        </div>
                     </div>
 
                     <div class="mt-3 sm:mt-0">
