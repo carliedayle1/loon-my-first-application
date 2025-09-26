@@ -29,10 +29,19 @@
             </p>
         </div>
         
-        <div class="mt-8">
-            <a href="#" class="inline-block rounded-md bg-blue-500 px-6 py-3 font-bold text-white shadow-md transition duration-300 hover:bg-blue-600">
-                Apply Now
+        <div class="mt-8 space-y-4">
+            <a href="/jobs/{{ $job->id }}/edit" class="inline-block rounded-md bg-blue-500 px-6 py-3 font-bold text-white shadow-md transition duration-300 hover:bg-blue-600">
+                Edit this job
             </a>
+
+            <form method="POST" action="/jobs/{{ $job->id }}" id="delete-form">
+                @csrf
+                @method('DELETE')
+
+                <button class="inline-block rounded-md bg-red-500 px-6 py-3 font-bold text-white shadow-md transition duration-300 hover:bg-red-600">
+                    Delete this job
+                </button>
+            </form>
         </div>
     </div>
 </x-layout>

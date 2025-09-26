@@ -63,4 +63,26 @@
         </main>
     </div>
 </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('delete-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from submitting
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit(); // If confirmed, submit the form
+                }
+            });
+        });
+    </script>
+    @include('sweetalert2::index')
 </html>
